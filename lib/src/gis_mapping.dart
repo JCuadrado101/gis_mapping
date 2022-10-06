@@ -4,12 +4,23 @@ import 'dart:ui' as ui;
 import 'package:google_maps/google_maps.dart';
 import 'package:google_maps/google_maps_places.dart';
 
+
 class GISMapping extends StatelessWidget {
   final String? pointURL;
   final String? lineURL;
   final String? pointIcon;
   final double? centerLat;
   final double? centerLong;
+  final double? polyline1Lat;
+  final double? polyline1Lng;
+  final double? polyline2Lat;
+  final double? polyline2Lng;
+  final double? polyline3Lat;
+  final double? polyline3Lng;
+  final double? polyline4Lat;
+  final double? polyline4Lng;
+  final double? polyline5Lat;
+  final double? polyline5Lng;
   const GISMapping({
     this.pointIcon,
     this.lineURL,
@@ -57,11 +68,11 @@ class GISMapping extends StatelessWidget {
       map.data!.loadGeoJson(lineURL);
 
       final triangleCoords = <LatLng>[
-        LatLng(41.4360392, -78.5675139),
-        LatLng(41.4306338, -78.5460562),
-        LatLng(41.4212377, -78.5570426),
-        LatLng(41.424327, -78.5776419 ),
-        LatLng(41.435267, -78.5683722 )
+        LatLng(polyline1Lat, polyline1Lng),
+        LatLng(polyline2Lat, polyline2Lng),
+        LatLng(polyline3Lat, polyline3Lng),
+        LatLng(polyline4Lat, polyline4Lng),
+        LatLng(polyline5Lat, polyline5Lng)
       ];
 
       Polygon(PolygonOptions()
