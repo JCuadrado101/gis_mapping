@@ -1,14 +1,12 @@
+import 'dart:html';
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 import 'package:google_maps/google_maps.dart';
-import 'package:gis_mapping/src/'
-import 'package:gis_mapping/src/infowindow_content.dart';
-import 'package:gis_mapping/src/point_line_data.dart';
+import 'package:gis_mapping/src/area_poly.dart';
+import 'package:gis_mapping/src/current_location_feature.dart';
 import 'package:gis_mapping/src/input_search_feature.dart';
-import 'dart:html';
-import 'area_poly.dart';
-import 'current_location_btn.dart';
-
+import 'package:gis_mapping/src/point_line_data.dart';
+import 'package:gis_mapping/src/infowindow_content.dart';
 
 class GISMapping extends StatelessWidget {
   final String? pointURL;
@@ -72,7 +70,7 @@ class GISMapping extends StatelessWidget {
       final map = GMap(elem, mapOptions);
 
       pointLineLayers(map, pointURL!, lineURL!, pointIcon);
-
+      infoWindowContent(map, infoWindow);
       areaPoly(
           polyline1Lat, polyline1Lng,
           polyline2Lat, polyline2Lng,
@@ -83,7 +81,7 @@ class GISMapping extends StatelessWidget {
       );
       currentLocationFeature(map, infoWindow);
       inputSearchFeature(map);
-      pointLineData(map, infoWindow);
+      pointLineLayers(map, pointURL!, lineURL!, pointIcon);
 
 
 

@@ -11,7 +11,7 @@ void handleLocationError(
     ..open();
 }
 
-void currenLocationFeature(GMap map, InfoWindow infoWindow) {
+void currentLocationFeature(GMap map, InfoWindow infoWindow) {
   final locationButton = (document.createElement('button') as ButtonElement)
     ..text = 'Pan to Current Location'
     ..classes.add('custom-map-control-button');
