@@ -13,6 +13,13 @@ and the Flutter guide for
 
 This package is designed for quick implementation of the Google Maps API for flutter applications. This package heavily depends on the google_maps package for Flutter Web. All parameters and settings of the GIS_Mapping is extremely opinionated and has very limited configuration. This is meant to be a plug and play solution for GIS Mapping configurations. 
 
+To use the GEOJSON feature - make sure that you have two sets of files: 
+
+1 - GEOJSON Lines
+2 - GEOJSON Circles
+
+This package should not be used if these features are combined in one geojson file. 
+
 ## Features
 
 The feature of this package includes the following: 
@@ -159,8 +166,33 @@ Within the same index.html - replace {APIKEY} with the actual APIKEY provided th
 
 
 
+Then you simply import the package where you want the map to display:
 
+``` import 'package:gis_mapping/gis_mapping.dart'; ```
 
+and called upon it: 
+
+```
+const GISMapping(
+    lineURL: {INSERT GEOJSON LINES HERE}
+    pointURL: {INSERT GEOJSON CIRCLES HERE},
+    pointIcon: {REFERENCE ASSET HERE},
+    centerLat: {CENTER MAP WHEN LOADED - Latitude},
+    centerLong: {CENTER MAP WHEN LOADED - Longitude},
+    polyline1Lat: {PT1 for polygon - Latitude},
+    polyline1Lng: {PT1 for polygon - Longitude},
+    polyline2Lat: {PT2 for polygon - Latitude},
+    polyline2Lng: {PT2 for polygon - Longitude},
+    polyline3Lat: {PT3 for polygon - Latitude},
+    polyline3Lng: {PT3 for polygon - Longitude},
+    polyline4Lat: {PT4 for polygon - Latitude},
+    polyline4Lng: {PT4 for polygon - Longitude},
+    polyline5Lat: {PT5 for polygon - Latitude},
+    polyline5Lng: {PT5 for polygon - Longitude},
+  ),
+  );
+  
+ ```
 
 
 ## Additional information
