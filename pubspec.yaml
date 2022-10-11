@@ -1,6 +1,6 @@
 name: gis_mapping
 description: GIS Mapping Project
-version: 0.0.1
+version: 0.0.4
 homepage: https://github.com/JCuadrado101/gis_mapping
 
 environment:
